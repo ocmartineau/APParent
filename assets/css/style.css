@@ -1,0 +1,69 @@
+body {
+    background-image: url(../images/background2.jpg);
+    background-size: 1750px;
+    background-attachment: fixed;
+}
+
+h1 {
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: bold;
+    font-size: 80px;
+    /* text-shadow: 2px 2px mediumaquamarine; */
+    text-align: center;
+    color: #0099CC;
+}
+
+h3 {
+    /* text-shadow: 2px 2px mediumaquamarine; */
+    color: #0099CC;
+    text-align: center;
+    font-weight: bold;
+}
+
+#header {
+    width: 100%;
+    opacity: 0.75;
+    background-color: midnightblue;
+}
+
+#search {
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+#searchbar {
+    background-color: transparent;
+    height: 50px;
+    width: 100%;
+}
+
+#services {
+    background-color: midnightblue;
+    opacity: 0.75;
+    color: #0099CC;
+}
+
+#footer {
+    background-color: midnightblue;
+    color: #0099CC;
+    padding: 100px;
+}
+
+input::placeholder {
+    color: midnightblue;
+    text-align: center;
+}
+
+input:focus {
+    box-shadow: royalblue;
+}
+
+input:hover {
+    box-shadow: royalblue;
+}
+
+
+/* #secondhalf {
+    width: 100%;
+    background-color: midnightblue;
+} */
