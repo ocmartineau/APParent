@@ -14,6 +14,10 @@ nav .brand-logo {
     margin: 0 auto;
 }
 
+#doctorsearch {
+    text-align: center;
+}
+
 p {
     line-height: 2rem;
 }
