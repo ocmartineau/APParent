@@ -17,4 +17,12 @@ $(document).ready(); {
     $("#submitBtn").click(function() {
         $("#doctorsearchresults").show();
     })
+
+    $("#return").click(function() {
+        $("#doctorsearchform").hide();
+        $("#doctorsearchresults").hide();
+        $("#walmartsearch").show();
+        $("#eventsearch").show();
+        $("#doctorsearch").show();
+    })
 }

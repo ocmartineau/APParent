@@ -14,7 +14,24 @@ nav .brand-logo {
     margin: 0 auto;
 }
 
+#topcontainer {
+    height: 200px;
+}
+
 #doctorsearch {
+    text-align: center;
+}
+
+#doctorsearchresults {
+    display: table;
+    overflow: scroll;
+}
+
+#walmartsearch {
+    text-align: center;
+}
+
+#eventsearch {
     text-align: center;
 }
 
