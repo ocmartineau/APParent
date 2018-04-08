@@ -1,69 +1,62 @@
-body {
-    background-image: url(../images/background2.jpg);
-    background-size: 1750px;
-    background-attachment: fixed;
+/* * * Use this file to override Materialize files so you can update * the core Materialize files in the future * * Made By MaterializeCSS.com */
+
+*/ .nav-wrapper container {
+    margin-left: auto;
 }
 
-h1 {
-    font-family: 'Shadows Into Light', cursive;
-    font-weight: bold;
-    font-size: 80px;
-    /* text-shadow: 2px 2px mediumaquamarine; */
-    text-align: center;
-    color: #0099CC;
+nav ul a,
+nav .brand-logo {
+    color: #444;
+    margin-left: 0 auto;
 }
 
-h3 {
-    /* text-shadow: 2px 2px mediumaquamarine; */
-    color: #0099CC;
-    text-align: center;
-    font-weight: bold;
+#logo-container {
+    margin: 0 auto;
 }
 
-#header {
-    width: 100%;
-    opacity: 0.75;
-    background-color: midnightblue;
+p {
+    line-height: 2rem;
 }
 
-#search {
-    margin-top: 200px;
-    margin-bottom: 200px;
+.sidenav-trigger {
+    color: #26a69a;
 }
 
-#searchbar {
-    background-color: transparent;
-    height: 50px;
+.parallax-container {
+    min-height: 380px;
+    line-height: 0;
+    height: auto;
+    color: rgba(116, 240, 178, 0.9);
+}
+
+.parallax-container .section {
     width: 100%;
 }
 
-#services {
-    background-color: midnightblue;
-    opacity: 0.75;
-    color: #0099CC;
+@media only screen and (max-width: 992px) {
+    .parallax-container .section {
+        position: absolute;
+        top: 40%;
+    }
+    #index-banner .section {
+        top: 10%;
+    }
 }
 
-#footer {
-    background-color: midnightblue;
-    color: #0099CC;
-    padding: 100px;
+@media only screen and (max-width: 600px) {
+    #index-banner .section {
+        top: 0;
+    }
 }
 
-input::placeholder {
-    color: midnightblue;
-    text-align: center;
+.icon-block {
+    padding: 0 15px;
 }
 
-input:focus {
-    box-shadow: royalblue;
+.icon-block .material-icons {
+    font-size: inherit;
 }
 
-input:hover {
-    box-shadow: royalblue;
+footer.page-footer {
+    margin: 0;
 }
-
-
-/* #secondhalf {
-    width: 100%;
-    background-color: midnightblue;
-} */
