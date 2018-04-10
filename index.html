@@ -9,6 +9,8 @@
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 
@@ -53,7 +55,7 @@
             <div class="row">
                 <div class="col s12 m4" id="doctorsearch">
                     <div class="icon-block">
-                        <h2 class="center brown-text">Doctor Search</h2>
+                        <h2>Doctor Search</h2>
                         <h5 class="center"></h5>
 
                         <button id="doctorbutton">
@@ -141,11 +143,35 @@
                             <br>
                             <label for="searchLocation">City/Town: </label>
                             <input type="text" class="form-control" id="searchLocation" placeholder="Type City/Town Here"><br><br>
-                            <input id="submitBtn" type="submit" value="Search!"> <input id="return" type="submit" value="Return">
+                            <input id="submitBtn" type="submit" data-toggle="modal" data-target="#myModal" value="Search!"> <input id="return" type="submit" value="Return">
                         </div>
                     </div>
 
 
+                </div>
+
+                <!--Modal For Doctors Search Results -->
+                <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Modal Header</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col s12 m4" id="doctorsearchresults">
+                                    <div id="doctorList">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
                 <div class="col s12 m4" id="doctorsearchresults">
@@ -155,7 +181,7 @@
 
                 <div class="col s12 m4" id="walmartsearch">
                     <div class="icon-block">
-                        <h2 class="center brown-text">Start Shopping</h2>
+                        <h2>Start Shopping</h2>
                         <h5 class="center"></h5>
 
                         <button id="walmartbutton">
@@ -170,7 +196,7 @@
 
                 <div class="col s12 m4" id="eventsearch">
                     <div class="icon-block">
-                        <h2 class="center brown-text">Find A Video</h2>
+                        <h2>Find An Event</h2>
                         <h5 class="center"></h5>
 
                         <button id="videobutton">
@@ -263,6 +289,7 @@
 
 
     <!--  Scripts-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="assets/javascript/materialize.js"></script>
     <script src="assets/javascript/doctors.js"></script>
