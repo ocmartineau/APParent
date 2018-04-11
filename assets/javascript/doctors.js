@@ -1,7 +1,8 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- 
+$(document).ready(function () {
+
+    $('.modal').modal();
     // J A V A S C R I P T
-    $(".selections").on("click", "#submitBtn", function() {
+    $(".selections").on("click", "#submitBtn", function () {
         event.preventDefault();
         var insurance = $("#insuranceMenu").val();
         var state = $("#stateMenu").val().toLowerCase();
@@ -12,7 +13,7 @@
         if (insurance !== "00" && state !== "00" && loc !== "") {
             //clears existing table info
             $("#doctorList").empty();
-    
+
             //AJAX call to get doctor info
             $.ajax({
                 url: queryURL,
@@ -31,16 +32,16 @@
                     $("#doctorList").text("No results found.");
                 }
                 //loop for each group
-                for (var i=0; i<results.length; i++) {
+                for (var i = 0; i < results.length; i++) {
                     var groupName = results[i].practices[0].name;
                     var practiceNumber = results[i].practices.length;
                     //loop for each practice
-                    for (var j=0; j<practiceNumber; j++) {
+                    for (var j = 0; j < practiceNumber; j++) {
                         //loop for each phone number & address
-                        for (var k=0; k<results[i].practices[j].phones.length; k++) {
+                        for (var k = 0; k < results[i].practices[j].phones.length; k++) {
                             var phoneNumber;
                             var address = results[i].practices[j].visit_address.street + " " + results[i].practices[j].visit_address.city;
-                            
+
                             //pulls only the results tied to the searched location
                             if (results[i].practices[j].location_slug === state + "-" + loc) {
                                 var doctorName = results[i].profile.first_name + " " + results[i].profile.last_name + ", " + results[i].profile.title;
@@ -49,9 +50,9 @@
                                 //displays only the landline number (not fax number)
                                 if (results[i].practices[j].phones[k].type === "landline") {
                                     phoneNumber = results[i].practices[j].phones[k].number;
-                                    phoneNumber = results[i].practices[j].phones[k].number.substr(0,3) + "-" + results[i].practices[j].phones[k].number.substr(3,3) + "-" + results[i].practices[j].phones[k].number.substr(6,3);
-                                    }   
-                                } 
+                                    phoneNumber = results[i].practices[j].phones[k].number.substr(0, 3) + "-" + results[i].practices[j].phones[k].number.substr(3, 3) + "-" + results[i].practices[j].phones[k].number.substr(6, 3);
+                                }
+                            }
                         }
                     }
                     console.log(doctorName, address, phoneNumber);
@@ -63,5 +64,5 @@
         } else {
             $("#doctorList").text("Please make sure all fields are completed.");
         }
-     });
-  
+    });
+});
