@@ -1,7 +1,9 @@
 $(document).ready(); {
 
 
-
+    $(document).ready(function() {
+        $('.modal').modal();
+    });
 
     $(".selections").on("click", "#submitBtn", function() {
         $("#doctorList").empty();
@@ -23,8 +25,8 @@ $(document).ready(); {
             var allAddresses = [];
 
 
-            $("#doctorList").html("<table><thead><tr><th>Doctor/Group</th><th>Doctor Info</th><th>Address</th><th>Phone Number</th></tr></thead>" + tableContent);
-            $("<table>").addClass("highlight");
+            $("#doctorList").html("<tr><th>Doctor/Group</th><th>Doctor Info</th><th>Address</th><th>Phone Number</th>" + tableContent);
+
 
             //loop for each group
             for (var i = 0; i < results.length; i++) {
@@ -54,7 +56,7 @@ $(document).ready(); {
                     }
                 }
                 console.log(doctorName, address, allAddresses, phoneNumber);
-                tableContent = "<tbody><tr><td>" + groupName + "</td><br><td>" + doctorName + "<br><img src=" + doctorImage + "><br>" + doctorBio + "</td><td>" + address + "</td><td>" + phoneNumber + "</td></tr></tbody></table>";
+                var tableContent = "<tr><td>" + groupName + "</td><br><td>" + doctorName + "<br><img src=" + doctorImage + "><br>" + doctorBio + "</td><td>" + address + "</td><td>" + phoneNumber + "</td></tr>";
                 $("#doctorList").append(tableContent);
                 allAddresses = [];
             }

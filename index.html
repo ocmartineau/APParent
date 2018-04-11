@@ -10,7 +10,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 
@@ -37,9 +38,9 @@
                 <div class="row center">
                     <h5 class="header col s12 light">Your everyday needs in one place, the APParent way.</h5>
                 </div>
-                <div class="row center">
+                <!-- <div class="row center">
                     <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
-                </div>
+                </div> -->
                 <br><br>
 
             </div>
@@ -143,7 +144,8 @@
                             <br>
                             <label for="searchLocation">City/Town: </label>
                             <input type="text" class="form-control" id="searchLocation" placeholder="Type City/Town Here"><br><br>
-                            <input id="submitBtn" type="submit" data-toggle="modal" data-target="#myModal" value="Search!"> <input id="return" type="submit" value="Return">
+                            <input id="return" type="submit" value="Return">
+                            <button type="button" data-target="modal1" class="btn modal-trigger" id="submitBtn">Search!</button>
                         </div>
                     </div>
 
@@ -151,33 +153,21 @@
                 </div>
 
                 <!--Modal For Doctors Search Results -->
-                <div id="myModal" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
-
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Modal Header</h4>
-                            </div>
-                            <div class="modal-body">
-                                <div class="col s12 m4" id="doctorsearchresults">
-                                    <div id="doctorList">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal bottom-sheet" style="overflow-y: scroll; max-height:55%;  margin-top: 50px; margin-bottom:50px;">
+                    <div class="modal-content">
+                        <div id="doctorList">
                         </div>
-
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
                     </div>
                 </div>
 
-                <div class="col s12 m4" id="doctorsearchresults">
+                <!-- <div class="col s12 m4" id="doctorsearchresults">
                     <div id="doctorList">
                     </div>
-                </div>
+                </div> -->
 
                 <div class="col s12 m4" id="walmartsearch">
                     <div class="icon-block">
@@ -199,17 +189,37 @@
                         <h2>Find An Event</h2>
                         <h5 class="center"></h5>
 
-                        <button id="videobutton">
+                        <button id="eventbutton">
                             <div class="icon-block">
                                  <img src="assets/images/greenvideo.png">
                             </div>
                         </button>
                     </div>
                 </div>
+
+
+                <div class="col s12 m4" id="eventsearchform">
+                    <p>Event Search</p>
+                    <form id="event-search">
+                        <div class="text-input">
+                            <label for="event-location">Location: </label>
+                            <input id="event-location" type="text" name="location" value="" placeholder="(e.g. New Jersey or Zip)">
+                        </div>
+                        <br>
+                        <div class="text-input">
+                            <label for="event-keyword">Keyword:</label>
+                            <input id="event-keyword" type="text" name="keyword" value="" placeholder="(Keyword e.g: Family)">
+                        </div>
+                        <br>
+                        <button id="event-submit" type="submit">Submit</button>
+                    </form>
+                </div>
             </div>
 
         </div>
     </div>
+
+
 
 
     <div class="parallax-container valign-wrapper">
@@ -244,7 +254,7 @@
         <div class="section no-pad-bot">
             <div class="container">
                 <div class="row center">
-                    <h5 class="header col s12 light">APParent, a place for all your parental needs.</h5>
+                    <h5 class="header col s12 light"></h5>
                 </div>
             </div>
         </div>
@@ -254,45 +264,60 @@
     <footer class="page-footer teal">
         <div class="container">
             <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Company Bio</h5>
-                    <p class="grey-text text-lighten-4"></p>
+                <h2>Meet Our Developers</h2>
+                <div class="col l3 s12" class="bio">
+                    <img src="assets/images/female2.png" alt "Cbelle">
+                    <h5 class="white-text">CBelle</h5>
+                    <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien
+                        id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. </p>
+                    <ul id="linkicons">
+                        <li>I</li>
+                        <li>Be</li>
+                        <li>Fly</li>
+                    </ul>
 
 
                 </div>
-                <div class="col l3 s12">
-                    <h5 class="white-text">Settings</h5>
-                    <ul>
-                        <li><a class="white-text" href="#!">Link 1</a></li>
-                        <li><a class="white-text" href="#!">Link 2</a></li>
-                        <li><a class="white-text" href="#!">Link 3</a></li>
-                        <li><a class="white-text" href="#!">Link 4</a></li>
-                    </ul>
+                <div class="col l3 s12" class="bio">
+                    <img src="assets/images/male.png" alt="Pat">
+                    <h5 class="white-text">Patkul</h5>
+                    <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien
+                        id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. </p>
+
+
                 </div>
-                <div class="col l3 s12">
-                    <h5 class="white-text">Connect</h5>
-                    <ul>
-                        <li><a class="white-text" href="#!">Link 1</a></li>
-                        <li><a class="white-text" href="#!">Link 2</a></li>
-                        <li><a class="white-text" href="#!">Link 3</a></li>
-                        <li><a class="white-text" href="#!">Link 4</a></li>
-                    </ul>
+                <div class="col l3 s12" class="bio">
+                    <img src="assets/images/female.png" alt="cristiane">
+                    <h5 class="white-text">Cristianne</h5>
+                    <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien
+                        id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. </p>
+
+
+                </div>
+                <div class="col l3 s12" class="bio">
+                    <img src="assets/images/male2.png" alt="olivier">
+                    <h5 class="white-text">Olivier</h5>
+                    <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien
+                        id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. </p>
+
+
                 </div>
             </div>
         </div>
         <div class="footer-copyright">
             <div class="container">
-                Made with <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+                &copy; APParent 2018
             </div>
         </div>
     </footer>
 
 
     <!--  Scripts-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="assets/javascript/materialize.js"></script>
     <script src="assets/javascript/doctors.js"></script>
+    <script src="assets/javascript/events.js"></script>
     <script src="assets/javascript/app.js"></script>
 
 </body>

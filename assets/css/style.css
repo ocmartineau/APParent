@@ -81,3 +81,24 @@ p {
 footer.page-footer {
     margin: 0;
 }
+
+h5 {
+    text-align: center;
+}
+
+.bio {
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin: auto;
+}
+
+.footer-copyright {
+    text-align: center;
+}
+
+#linkicons {
+    display: inline;
+}
