@@ -144,7 +144,7 @@
                             <br>
                             <label for="searchLocation">City/Town: </label>
                             <input type="text" class="form-control" id="searchLocation" name="searchLocation" placeholder="Type City/Town Here" autocomplete="on" required>
-                            <input id="return" type="submit" value="Return">
+                            <input class="return" type="submit" value="Return">
                             <button type="button" data-target="modal1" class="btn modal-trigger" id="submitBtn">Search!</button>
                         </form>
                     </div>
@@ -160,7 +160,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"></a>
                     </div>
                 </div>
 
@@ -185,9 +185,10 @@
                     <h1>Walmart Search </h1>
                     <label>Search Term </label>
                     <input type="text" class="form-control" id="searchTerm" placeholder="Type Here"></input>
-                    <input id="return" type="submit" value="Return"> <button type="button" data-target="modal2" class="btn modal-trigger" id="SearchButton">Search!</button>
+                    <input class="return" type="submit" value="Return"> <button type="button" data-target="modal2" class="btn modal-trigger" id="SearchButton">Search!</button>
                 </div>
 
+                <!--Modal for Walmart search results-->
                 <div id="modal2" class="modal bottom-sheet" style="overflow-y: scroll; max-height:55%;  margin-top: 50px; margin-bottom:50px;">
                     <div class="modal-content">
                         <div id="searchresults">
@@ -200,12 +201,12 @@
 
 
 
-                <div class="col s12 m4" id="eventsearch">
+                <div class="col s12 m4" id="imagesearch">
                     <div class="icon-block">
-                        <h2>Find An Event</h2>
+                        <h2>Find An Image</h2>
                         <h5 class="center"></h5>
 
-                        <button id="eventbutton">
+                        <button id="imagebutton">
                             <div class="icon-block">
                                  <img src="assets/images/greenvideo.png">
                             </div>
@@ -214,23 +215,29 @@
                 </div>
 
 
-                <div class="col s12 m4" id="eventsearchform">
-                    <p>Event Search</p>
-                    <form id="event-search">
-                        <div class="text-input">
-                            <label for="event-location">Location: </label>
-                            <input id="event-location" type="text" name="location" value="" placeholder="(e.g. New Jersey or Zip)">
-                        </div>
-                        <br>
-                        <div class="text-input">
-                            <label for="event-keyword">Keyword:</label>
-                            <input id="event-keyword" type="text" name="keyword" value="" placeholder="(Keyword e.g: Family)">
-                        </div>
-                        <br>
-                        <button id="event-submit" type="submit">Submit</button>
+                <div class="col s12 m4" id="imagesearchform">
+                    <p>Image Search</p>
+                    <form>
+                        <label for="search">Type a search term</label>
+                        <input type="search" name="search" id="search">
+                        <input class="return" type="submit" value="Return"> <button type="button" data-target="modal3" class="btn modal-trigger" id="submit">Search!</button>
                     </form>
                 </div>
+
+                <!--Modal for image results-->
+                <div id="modal3" class="modal bottom-sheet" style="overflow-y: scroll; max-height:55%;  margin-top: 50px; margin-bottom:50px;">
+                    <div class="modal-content">
+                        <ul id="photos"><br>
+
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"></a>
+                    </div>
+                </div>
+
             </div>
+
 
         </div>
     </div>
@@ -334,12 +341,8 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="assets/javascript/materialize.js"></script>
     <script src="assets/javascript/doctors.js"></script>
-<<<<<<< HEAD
-    <script src="assets/javascript/events.js"></script>
     <script src="assets/javascript/walmart.js"></script>
-=======
-    <script src="assets/javascript/api.js"></script>
->>>>>>> d2be6e4f222206e88d4cb41b386e85864d82edbb
+    <script src="assets/javascript/flickr.js"></script>
     <script src="assets/javascript/app.js"></script>
 
 
