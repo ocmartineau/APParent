@@ -1,4 +1,4 @@
-$(function(){
+$(function() {
     $('.sidenav').sidenav();
     $('.parallax').parallax();
 
@@ -6,9 +6,10 @@ $(function(){
     $('select').formSelect();
     $("#doctorsearchresults").hide();
     $("#eventsearchform").hide();
+    $("#walmartsearchform").hide();
 
 
-    $("#doctorbutton").click(function () {
+    $("#doctorbutton").click(function() {
         $("#doctorsearch").hide();
         $("#walmartsearch").hide();
         $("#eventsearch").hide();
@@ -19,18 +20,27 @@ $(function(){
     //     $("#doctorsearchresults").show();
     // })
 
-    $("#eventbutton").click(function () {
+    $("#eventbutton").click(function() {
         $("#doctorsearch").hide();
         $("#walmartsearch").hide();
         $("#eventsearch").hide();
         $("#eventsearchform").show();
     })
 
-    $("#return").click(function () {
+    $("#walmartbutton").click(function() {
+        $("#walmartsearchform").show();
+        $("#eventsearch").hide();
+        $("#doctorsearch").hide();
+        $("#walmartsearch").hide();
+    })
+
+
+    $("#return").click(function() {
         $("#doctorsearchform").hide();
         $("#doctorsearchresults").hide();
+        $("#walmartsearchform").hide();
         $("#walmartsearch").show();
         $("#eventsearch").show();
         $("#doctorsearch").show();
     })
-})
+});
