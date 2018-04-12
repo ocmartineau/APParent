@@ -1,8 +1,8 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
     $('.modal').modal();
     // J A V A S C R I P T
-    $(".selections").on("click", "#submitBtn", function () {
+    $(".selections").on("click", "#submitBtn", function() {
         event.preventDefault();
         var insurance = $("#insuranceMenu").val();
         var state = $("#stateMenu").val().toLowerCase();
@@ -18,7 +18,7 @@ $(document).ready(function () {
             $.ajax({
                 url: queryURL,
                 method: "GET"
-            }).then(function (response) {
+            }).then(function(response) {
                 console.log(insurance, state, loc);
                 console.log(response);
                 console.log(queryURL);
@@ -47,6 +47,7 @@ $(document).ready(function () {
                                 var doctorName = results[i].profile.first_name + " " + results[i].profile.last_name + ", " + results[i].profile.title;
                                 var doctorImage = results[i].profile.image_url;
                                 var doctorBio = results[i].profile.bio;
+                                var address = results[i].practices[j].visit_address.street + " " + results[i].practices[j].visit_address.city;
                                 //displays only the landline number (not fax number)
                                 if (results[i].practices[j].phones[k].type === "landline") {
                                     phoneNumber = results[i].practices[j].phones[k].number;

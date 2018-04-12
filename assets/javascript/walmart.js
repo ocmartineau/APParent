@@ -15,9 +15,15 @@ $(function() {
 
             // make the AJAX request to the API - GETs the JSON data at the queryURL.
             // the data then gets passed as an argument to the updatePage function
+
+
             $.ajax({
-                url: queryURL,
-                method: "GET"
+                url: "https://mighty-river-19291.herokuapp.com/cors",
+                data: {
+                    url: "http://api.walmartlabs.com/v1/search?apiKey=tk9cjy8hr64uw5kjt6c2gwew&query=" + searchTerm,
+                    key: "8b5dcaf7cdfb9c46221d492eec6560c571d6ec218b2485c54075ab7840fa77f9"
+                },
+                method: "POST"
             }).then(function(response) {
                 console.log(response);
 

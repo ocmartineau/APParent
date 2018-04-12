@@ -35,10 +35,12 @@ $(function() {
     })
 
 
-    $(".return").click(function() {
+    $(document).on("click", ".return", function() {
+        event.preventDefault();
         $("#doctorsearchform").hide();
         $("#doctorsearchresults").hide();
         $("#walmartsearchform").hide();
+        $("#imagesearchform").hide();
         $("#walmartsearch").show();
         $("#imagesearch").show();
         $("#doctorsearch").show();
