@@ -94,6 +94,31 @@
             font-weight: bold;
         }
         
+        #topphototext {
+            font-family: 'Comfortaa', cursive;
+            background-blend-mode: luminosity;
+            text-shadow: 2px 2px rgb(17, 17, 17);
+            color: #60b286;
+            font-weight: bold;
+            font-size: 34px;
+        }
+        
+        #bottomphototext {
+            font-family: 'Comfortaa', cursive;
+            background-blend-mode: luminosity;
+            text-shadow: 2px 2px rgb(17, 17, 17);
+            color: #60b286;
+            font-weight: bold;
+            font-size: 34px;
+        }
+        
+        #developers {
+            font-family: 'Comfortaa', cursive;
+            font-style: bold;
+            font-size: 34px;
+            font-weight: bold;
+        }
+        
         h5 {
             font-family: 'Comfortaa', cursive;
             background-blend-mode: luminosity;
