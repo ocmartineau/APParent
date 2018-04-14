@@ -40,8 +40,6 @@ $(document).ready(function() {
                         //loop for each phone number & address
                         for (var k = 0; k < results[i].practices[j].phones.length; k++) {
                             var phoneNumber;
-                            var address = results[i].practices[j].visit_address.street + " " + results[i].practices[j].visit_address.city;
-
                             //pulls only the results tied to the searched location
                             if (results[i].practices[j].location_slug === state + "-" + loc) {
                                 var doctorName = results[i].profile.first_name + " " + results[i].profile.last_name + ", " + results[i].profile.title;

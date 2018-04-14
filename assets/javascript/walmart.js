@@ -1,21 +1,10 @@
 $(function() {
     $("#SearchButton").on("click", function(event) {
-        var searchTerm = $("#searchTerm").val().trim();
-        var queryURL = "https://api.walmartlabs.com/v1/search?apiKey=tk9cjy8hr64uw5kjt6c2gwew&query=" + searchTerm;
-        console.log("hello Walmart buyers")
-            // This way we can hit enter on the keyboard and it registers the search
-            // (in addition to clicks). Prevents the page from reloading on form submit.
         event.preventDefault();
+        var searchTerm = $("#searchTerm").val().trim();
+
+        //if searchTerm is not empty, continue
         if (searchTerm !== "") {
-            // empty the region associated with the articles
-            console.log(searchTerm);
-
-            // build the query URL for the ajax request to the NYT API
-
-
-            // make the AJAX request to the API - GETs the JSON data at the queryURL.
-            // the data then gets passed as an argument to the updatePage function
-
 
             $.ajax({
                 url: "https://mighty-river-19291.herokuapp.com/cors",
@@ -25,9 +14,12 @@ $(function() {
                 },
                 method: "POST"
             }).then(function(response) {
-                console.log(response);
 
-                if (response.items.length > 0) {
+                console.log(response);
+                console.log(URL);
+
+                //if search produces results, then display results
+                if (response.numItems > 0) {
                     $("#searchResults").empty();
                     for (var i = 0; i < response.items.length; i++) {
                         var img = $("<img>").attr("src", response.items[i].mediumImage)
@@ -38,13 +30,17 @@ $(function() {
 
                         $("#searchResults").append(img).append("<br/>").append(paragraph).append(price).append(itemDescription).append("<br>").append(linkToProduct).append("<br>");
                     }
+                    //else if search produces no results, display "no results found" msg
+                } else {
+                    $("#searchResults").empty();
+                    $("#searchResults").text("No results found");
                 }
 
             });
-
+            //else if search term is left empty, inform user to enter product name in search box
         } else {
             $("#searchResults").empty();
-            $("#searchResults").text("Please write product Name");
+            $("#searchResults").text("Please enter product name");
 
         }
     });
