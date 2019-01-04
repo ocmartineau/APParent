@@ -1,6 +1,8 @@
 # APParent
 
-This is the first major project my team and I completed for Coding Bootcamp. A web application geared towards usefulness to Parents that utilizes various techniques such as AJAX/API calling and MaterializeCSS. The idea here was to exhibit proficiency with making AJAX calls and then taking the resulting information and displaying it in a useful way.
+This is the first major project my team and I completed for Coding Bootcamp. A web application geared towards usefulness to Parents that utilizes various techniques such as AJAX/API calling and MaterializeCSS. The layout is specifically using Materialize "Parrallax" which features a pretty smooth scrolling experience.
+
+The idea here was to exhibit proficiency with making AJAX calls and then taking the resulting information and displaying it in a useful way.
 
 ![Alt Text](assets/images/scroll1.gif)
 
