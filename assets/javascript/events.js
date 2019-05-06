@@ -7,10 +7,10 @@ $("#event-submit").on("click", function() {
     console.log(eventLocation, keyword);
     //AJAX call
     $.ajax({
-        url: "https://mighty-river-19291.herokuapp.com/cors",
+        url: "https://mighty-brook-95893.herokuapp.com/cors",
         data: {
             url: "http://api.eventful.com/json/events/search?&app_key=" + key + "&keywords=" + keyword + "&location=" + eventLocation + "&date=Future",
-            key: "8b5dcaf7cdfb9c46221d492eec6560c571d6ec218b2485c54075ab7840fa77f9"
+            key: "M4xJV5grqbCV4btc"
         },
         method: "POST"
     }).then(function(response) {

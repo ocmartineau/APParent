@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
     $('.modal').modal();
+
     // J A V A S C R I P T
     $(".selections").on("click", "#submitBtn", function() {
         event.preventDefault();
@@ -9,6 +10,7 @@ $(document).ready(function() {
         var loc = $("#searchLocation").val().toLowerCase().replace(" ", "-");
         var queryURL = "https://api.betterdoctor.com/2016-03-01/doctors?specialty_uid=pediatrician&insurance_uid=" + insurance + "&location=" + state + "-" + loc + "&skip=0&limit=50&user_key=986d188fa4063779e75e3bcfd20f0956";
         console.log(insurance, state, loc);
+
         //ensures all fields must be filled out before proceeding
         if (insurance !== "00" && state !== "00" && loc !== "") {
             //clears existing table info
@@ -23,11 +25,14 @@ $(document).ready(function() {
                 console.log(response);
                 console.log(queryURL);
                 var results = response.data;
+
                 //if search inputs yield no results, display "No results found" message
                 if (results.length > 0) {
+
                     //creates table header if results are found
                     $("#doctorList").html("<tr><th>Doctor/Group</th><th>Doctor Info</th><th>Address</th><th>Phone Number</th>" + tableContent);
                 } else {
+                    
                     //displays "No results found" message
                     $("#doctorList").text("No results found.");
                 }
