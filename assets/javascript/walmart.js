@@ -7,10 +7,10 @@ $(function() {
         if (searchTerm !== "") {
 
             $.ajax({
-                url: "https://mighty-river-19291.herokuapp.com/cors",
+                url: "https://mighty-brook-95893.herokuapp.com/cors",
                 data: {
                     url: "http://api.walmartlabs.com/v1/search?apiKey=tk9cjy8hr64uw5kjt6c2gwew&query=" + searchTerm,
-                    key: "8b5dcaf7cdfb9c46221d492eec6560c571d6ec218b2485c54075ab7840fa77f9"
+                    key: "efd92cf6cc5e7649916c4e73939e6281"
                 },
                 method: "POST"
             }).then(function(response) {

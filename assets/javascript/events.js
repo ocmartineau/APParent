@@ -3,18 +3,19 @@ $("#event-submit").on("click", function() {
     $("#content").empty();
     var eventLocation = $("#event-location").val().toLowerCase().replace(" ", "+");
     var keyword = $("#event-keyword").val().toLowerCase();
-    var key = "7xvLDCCDGL5MnWLF";
+    var key = "tvs4ZKcXQTp2kx4S";
     console.log(eventLocation, keyword);
     //AJAX call
     $.ajax({
         url: "https://mighty-brook-95893.herokuapp.com/cors",
         data: {
-            url: "http://api.eventful.com/json/events/search?&app_key=" + key + "&keywords=" + keyword + "&location=" + eventLocation + "&date=Future",
-            key: "M4xJV5grqbCV4btc"
+            url: "http://api.eventful.com/json/events/search?&app_key=tvs4ZKcXQTp2kx4S" + "&keywords=" + keyword + "&location=" + eventLocation + "&date=Future",
+            key: "efd92cf6cc5e7649916c4e73939e6281"
         },
+        
         method: "POST"
     }).then(function(response) {
-
+        
         console.log(response);
 
         if (response.events) {
@@ -27,6 +28,7 @@ $("#event-submit").on("click", function() {
                 var eventDescription = $("<p>").html(response.events.event[i].description);
                 var eventLink = $("<a>").attr("href", response.events.event[i].venue_url).text("Click here for more info");
                 var eventDiv = $("<div>").attr("class", "eventDiv");
+                $(".eventDiv").css("border", "2px solid black");
 
                 if (response.events.event[i].image) {
                     var eventImage = $("<img>").attr("src", response.events.event[i].image.medium.url);
